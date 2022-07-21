@@ -4,8 +4,10 @@
 
 html {
   font-family: sans-serif;
+  background: #1F2440;
 }
 
 body {
+  color: white;
   margin: 0;
 }
