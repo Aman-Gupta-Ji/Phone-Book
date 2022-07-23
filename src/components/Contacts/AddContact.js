@@ -4,6 +4,7 @@ import Card from "../UI/Card";
 import styles from "./AddContact.module.css";
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
 
 function AddContact(props) {
   const [enteredName, setEnteredName] = useState("");
@@ -28,7 +29,8 @@ function AddContact(props) {
     if (!enteredPhone.match(phoneno)) {
       setError({
         error: "Input Valid Phone Number",
-        message: "Please Enter a valid Phone Number like: \n+XX-XXXX-XXXX\n+XX.XXXX.XXXX\n+XX XXXX XXXX",
+        message:
+          "Please Enter a valid Phone Number like: \n+XX-XXXX-XXXX\n+XX.XXXX.XXXX\n+XX XXXX XXXX",
       });
       return;
     }
@@ -45,10 +47,16 @@ function AddContact(props) {
   };
   const errorHandler = () => {
     setError(null);
-  }
+  };
   return (
-    <div>
-      {error && <ErrorModal error={error.error} message={error.message} onConfirm={errorHandler}></ErrorModal>}
+    <Wrapper>
+      {error && (
+        <ErrorModal
+          error={error.error}
+          message={error.message}
+          onConfirm={errorHandler}
+        ></ErrorModal>
+      )}
       <Card className={styles.input}>
         <form onSubmit={addContactHandler}>
           <label htmlFor="name">Name</label>
@@ -68,7 +76,7 @@ function AddContact(props) {
           <Button type="submit">Add Contact</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 }
 

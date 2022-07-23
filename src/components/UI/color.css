@@ -1,20 +1,50 @@
 /* Color Theme Swatches in Hex */
-.Glassmorphism-icons-1-hex { color: #0528F2; }
-.Glassmorphism-icons-2-hex { color: #0540F2; }
-.Glassmorphism-icons-3-hex { color: #3071F2; }
-.Glassmorphism-icons-4-hex { color: #AEC5F2; }
-.Glassmorphism-icons-5-hex { color: #A68A56; }
+.Glassmorphism-icons-1-hex {
+  color: #0528f2;
+}
+.Glassmorphism-icons-2-hex {
+  color: #0540f2;
+}
+.Glassmorphism-icons-3-hex {
+  color: #3071f2;
+}
+.Glassmorphism-icons-4-hex {
+  color: #aec5f2;
+}
+.Glassmorphism-icons-5-hex {
+  color: #a68a56;
+}
 
 /* Color Theme Swatches in RGBA */
-.Glassmorphism-icons-1-rgba { color: rgba(4, 40, 242, 1); }
-.Glassmorphism-icons-2-rgba { color: rgba(4, 64, 242, 1); }
-.Glassmorphism-icons-3-rgba { color: rgba(48, 113, 242, 1); }
-.Glassmorphism-icons-4-rgba { color: rgba(174, 197, 242, 1); }
-.Glassmorphism-icons-5-rgba { color: rgba(165, 137, 86, 1); }
+.Glassmorphism-icons-1-rgba {
+  color: rgba(4, 40, 242, 1);
+}
+.Glassmorphism-icons-2-rgba {
+  color: rgba(4, 64, 242, 1);
+}
+.Glassmorphism-icons-3-rgba {
+  color: rgba(48, 113, 242, 1);
+}
+.Glassmorphism-icons-4-rgba {
+  color: rgba(174, 197, 242, 1);
+}
+.Glassmorphism-icons-5-rgba {
+  color: rgba(165, 137, 86, 1);
+}
 
 /* Color Theme Swatches in HSLA */
-.Glassmorphism-icons-1-hsla { color: hsla(230, 96, 48, 1); }
-.Glassmorphism-icons-2-hsla { color: hsla(225, 96, 48, 1); }
-.Glassmorphism-icons-3-hsla { color: hsla(219, 88, 56, 1); }
-.Glassmorphism-icons-4-hsla { color: hsla(219, 72, 81, 1); }
-.Glassmorphism-icons-5-hsla { color: hsla(39, 31, 49, 1); }
+.Glassmorphism-icons-1-hsla {
+  color: hsla(230, 96, 48, 1);
+}
+.Glassmorphism-icons-2-hsla {
+  color: hsla(225, 96, 48, 1);
+}
+.Glassmorphism-icons-3-hsla {
+  color: hsla(219, 88, 56, 1);
+}
+.Glassmorphism-icons-4-hsla {
+  color: hsla(219, 72, 81, 1);
+}
+.Glassmorphism-icons-5-hsla {
+  color: hsla(39, 31, 49, 1);
+}

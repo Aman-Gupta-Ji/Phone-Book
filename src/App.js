@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import AddContact from "./components/Contacts/AddContact";
 import ContactList from "./components/Contacts/ContactList";
+import Wrapper from "./components/Helpers/Wrapper";
 
 const DUMMYCONTACTS = [
   { name: "Aman Gupta", phone: "+91 87872 58237" },
@@ -12,14 +13,14 @@ function App() {
   const [contats, setContacts] = useState(DUMMYCONTACTS);
   const addContactHandler = (ename, ephone) => {
     setContacts((prev) => {
-      return [{name: ename, phone: ephone}, ...prev];
+      return [{ name: ename, phone: ephone }, ...prev];
     });
   };
   return (
-    <div>
+    <Fragment>
       <AddContact onAddContact={addContactHandler} />
       <ContactList contacts={contats} />
-    </div>
+    </Fragment>
   );
 }
 
