@@ -10,8 +10,9 @@
 }
 
 .contact li {
-  border: 1px solid #F2CF8D;
-  background-color: #1F2440;
+  border: 1px solid #464AA6;
+  background-color: #F2CF8D;
+  color: black;
   margin: 0.5rem 0;
   padding: 0.5rem;
 }
