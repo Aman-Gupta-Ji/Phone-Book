@@ -22,6 +22,7 @@ function AddContact(props) {
     if (!enteredPhone.match(phoneno)) {
       return;
     }
+    props.onAddContact(enteredName, enteredPhone);
     setEnteredName("");
     setEnteredPhone("");
   };
@@ -35,14 +36,14 @@ function AddContact(props) {
   return (
     <Card className={styles.input}>
       <form onSubmit={addContactHandler}>
-        <label htmlfor="name">Name</label>
+        <label htmlFor="name">Name</label>
         <input
           id="name"
           type="text"
           value={enteredName}
           onChange={nameChangeHandler}
         />
-        <label htmlfor="phone">Number </label>
+        <label htmlFor="phone">Number </label>
         <input
           id="phone"
           type="tel"
