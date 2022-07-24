@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import Card from "../UI/Card";
 import styles from "./AddContact.module.css";
@@ -7,14 +7,17 @@ import ErrorModal from "../UI/ErrorModal";
 import Wrapper from "../Helpers/Wrapper";
 
 function AddContact(props) {
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredPhone, setEnteredPhone] = useState("");
+  const nameInputRef = useRef();
+  const phoneInputRef = useRef();
+
   const [error, setError] = useState();
 
   const addContactHandler = (event) => {
     event.preventDefault();
-    setEnteredName(enteredName.trim());
-    setEnteredPhone(enteredPhone.trim());
+    let enteredName = nameInputRef.current.value;
+    let enteredPhone = phoneInputRef.current.value;
+    enteredName = enteredName.trim();
+    enteredPhone = enteredPhone.trim();
     if (enteredName.length === 0 || enteredPhone.length === 0) {
       setError({
         error: "Input Empty",
@@ -23,9 +26,6 @@ function AddContact(props) {
       return;
     }
     const phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{5})[-. ]?([0-9]{5})$/;
-    // +XX-XXXX-XXXX
-    // +XX.XXXX.XXXX
-    // +XX XXXX XXXX
     if (!enteredPhone.match(phoneno)) {
       setError({
         error: "Input Valid Phone Number",
@@ -35,16 +35,10 @@ function AddContact(props) {
       return;
     }
     props.onAddContact(enteredName, enteredPhone);
-    setEnteredName("");
-    setEnteredPhone("");
+    nameInputRef.current.value = "";
+    phoneInputRef.current.value = "";
   };
 
-  const nameChangeHandler = (event) => {
-    setEnteredName(event.target.value);
-  };
-  const phoneChangeHandler = (event) => {
-    setEnteredPhone(event.target.value);
-  };
   const errorHandler = () => {
     setError(null);
   };
@@ -60,19 +54,9 @@ function AddContact(props) {
       <Card className={styles.input}>
         <form onSubmit={addContactHandler}>
           <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            type="text"
-            value={enteredName}
-            onChange={nameChangeHandler}
-          />
+          <input id="name" type="text" ref={nameInputRef} />
           <label htmlFor="phone">Number </label>
-          <input
-            id="phone"
-            type="tel"
-            value={enteredPhone}
-            onChange={phoneChangeHandler}
-          />
+          <input id="phone" type="tel" ref={phoneInputRef} />
           <Button type="submit">Add Contact</Button>
         </form>
       </Card>

@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import AddContact from "./components/Contacts/AddContact";
 import ContactList from "./components/Contacts/ContactList";
-import Wrapper from "./components/Helpers/Wrapper";
+// import Wrapper from "./components/Helpers/Wrapper";
 
 const DUMMYCONTACTS = [
   { name: "Aman Gupta", phone: "+91 87872 58237" },
